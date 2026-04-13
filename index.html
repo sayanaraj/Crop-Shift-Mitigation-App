@@ -3,411 +3,685 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgriSmart – Crop Shift Mitigation App</title>
+  <title>AgriSmart — Smart Crop Decisions</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<body data-page="home">
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <div class="logo-icon">🌿</div>
+      AgriSmart
+    </div>
+    <div class="nav-actions">
+      <button id="nav-login-btn"  class="btn-nav-login"  onclick="window.location.href='login.html'">Login</button>
+      <button class="btn-nav-signup" onclick="window.location.href='signup.html'">Get Started</button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Oilseed Farming Platform
+      </div>
+      <h1 class="hero-title">
+        Make Smart
+        <span class="accent">Crop Decisions</span>
+      </h1>
+      <p class="hero-desc">
+        AgriSmart helps Indian farmers shift from conventional crops to high-yield oilseeds
+        with AI-powered insights, risk analysis, and government scheme guidance.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="window.location.href='login.html'">
+          🔐 &nbsp;Login
+        </button>
+        <button class="btn-secondary" onclick="window.location.href='signup.html'">
+          🚀 &nbsp;Get Started
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">4.2×</span>
+          <span class="stat-label">Higher Profit</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">12+</span>
+          <span class="stat-label">Oilseed Crops</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Accuracy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating card -->
+    <div class="hero-visual">
+      <div class="hero-card-float">
+        <div class="hcf-title">Live Crop Comparison</div>
+        <div class="hcf-crop-row">
+          <div class="hcf-crop-icon">🌻</div>
+          <div class="hcf-crop-info">
+            <div class="hcf-crop-name">Sunflower</div>
+            <div class="hcf-crop-yield">Yield: 18 q/ha</div>
+          </div>
+          <div class="hcf-profit">+₹42,000</div>
+        </div>
+        <div class="hcf-crop-row">
+          <div class="hcf-crop-icon">🫘</div>
+          <div class="hcf-crop-info">
+            <div class="hcf-crop-name">Soybean</div>
+            <div class="hcf-crop-yield">Yield: 22 q/ha</div>
+          </div>
+          <div class="hcf-profit">+₹38,500</div>
+        </div>
+        <div class="hcf-crop-row">
+          <div class="hcf-crop-icon">🌾</div>
+          <div class="hcf-crop-info">
+            <div class="hcf-crop-name">Wheat (current)</div>
+            <div class="hcf-crop-yield">Yield: 35 q/ha</div>
+          </div>
+          <div class="hcf-profit down">+₹18,200</div>
+        </div>
+        <div class="hcf-crop-row">
+          <div class="hcf-crop-icon">🟡</div>
+          <div class="hcf-crop-info">
+            <div class="hcf-crop-name">Mustard</div>
+            <div class="hcf-crop-yield">Yield: 15 q/ha</div>
+          </div>
+          <div class="hcf-profit">+₹36,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─── -->
+  <section class="features-section">
+    <div class="section-tag">Why AgriSmart?</div>
+    <h2 class="section-title">Everything You Need to<br>Grow Smarter</h2>
+    <p class="section-sub">Our platform combines real-time data, AI analysis, and government scheme information to help you make the most profitable crop decisions.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon fi-green">📊</div>
+        <h3>Smart Crop Dashboard</h3>
+        <p>Real-time profit, yield, and weather metrics in one clean interface. Track your farm's performance at a glance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-wheat">⚖️</div>
+        <h3>Crop Comparison Engine</h3>
+        <p>Compare oilseeds vs. conventional crops side-by-side on profitability, water use, market demand, and risk level.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-rust">🛡️</div>
+        <h3>Risk Analysis</h3>
+        <p>Assess drought, pest, market, and flood risks for your region. Get mitigation strategies tailored to your situation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-forest">🏛️</div>
+        <h3>Government Schemes</h3>
+        <p>Stay updated on PM-KISAN, NFSM, OILPALM mission, and state-level subsidies available for oilseed farmers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">🌦️</div>
+        <h3>Weather Integration</h3>
+        <p>Hyperlocal weather data to plan sowing, irrigation, and harvest windows. Prevent losses from climate uncertainty.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-wheat">🤖</div>
+        <h3>AI Recommendations</h3>
+        <p>Personalized crop shift recommendations based on your soil type, district, and historical yield patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─── -->
+  <section class="how-section">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">Four Steps to Better Yields</h2>
+    <p class="section-sub">From signup to your first harvest plan in minutes.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Create Account</h3>
+        <p>Sign up with your name and email. No technical knowledge required.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>View Your Dashboard</h3>
+        <p>Access crop data, weather, risk scores, and profit projections instantly.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Compare Crops</h3>
+        <p>See how oilseeds like sunflower, soybean, and mustard compare to your current crop.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Shift & Earn More</h3>
+        <p>Follow AI recommendations and government scheme guidance to maximize income.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-logo">🌿 AgriSmart</div>
+    <p>© 2024 AgriSmart. Supporting India's Oilseed Revolution.</p>
+    <div class="footer-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+async function updateDashboard() {
+
+  const location = document.getElementById("locationSelect").value;
+  const crop = document.getElementById("cropSelect").value;
+  const season = document.getElementById("seasonSelect").value;
+  const landArea = document.getElementById("landArea").value;
+
+  try {
+
+    const res = await fetch("http://localhost:8000/analyze", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        location: location,
+        landType: "rainfed",
+        irrigation: "medium"
+      })
+    });
+
+    const data = await res.json();
+    const best = data.best_crop;
+
+    document.getElementById("profitVal").innerText = "₹ " + best.final_profit;
+
+    if (best.final_profit > 40000) {
+      document.getElementById("riskVal").innerText = "Low";
+      document.getElementById("riskBadge").innerText = "Safe to proceed";
+    } else {
+      document.getElementById("riskVal").innerText = "Medium";
+      document.getElementById("riskBadge").innerText = "Moderate risk";
+    }
+
+    document.getElementById("stabilityVal").innerText =
+      (Math.random() * 3 + 7).toFixed(1) + " / 10";
+    document.getElementById("stabilityBadge").innerText = "Stable market";
+
+    document.getElementById("weatherVal").innerText = "Favorable";
+    document.getElementById("weatherBadge").innerText = "Good rainfall forecast";
+
+    document.getElementById("yieldVal").innerText =
+      (Math.random() * 3 + 6).toFixed(1) + " Quintals / Acre";
+    document.getElementById("yieldBadge").innerText = "Above district average";
+
+    document.querySelector(".accent-large").innerText =
+      "🌻 " + best.crop.toUpperCase();
+
+    document.querySelector(".confidence").innerText =
+      "Confidence: " + data.confidence + "%";
+
+    document.querySelector(".insight-desc").innerText =
+      "Based on your inputs and current market conditions, this crop provides the highest expected return with optimized risk.";
+
+    const reasonsHTML = data.explanation
+      .map(e => `<div class="reason">✅ ${e}</div>`)
+      .join("");
+
+    document.querySelector(".insight-reasons").innerHTML = reasonsHTML;
+
+    updateChart(data.all_options);
+
+    highlightBestCrop(best.crop);
+
+    document.querySelector("#dashboard")
+      .scrollIntoView({ behavior: "smooth" });
+
+  } catch (err) {
+    console.error(err);
+    alert("Backend connection failed ❌");
+  }
+}
+
+
+function updateChart(options) {
+
+  const labels = options.map(o => o.crop.toUpperCase());
+  const profits = options.map(o => o.final_profit);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("profitChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Profit per Acre (₹)",
+        data: profits,
+        backgroundColor: options.map(o =>
+          o.crop === options[0].crop ? "#4CAF50" : "#cccccc"
+        )
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+}
+
+function highlightBestCrop(bestCrop) {
+
+  document.querySelectorAll(".compare-crop-card").forEach(card => {
+    card.classList.remove("best");
+  });
+
+  document.querySelectorAll(".compare-crop-card").forEach(card => {
+    if (card.innerText.toLowerCase().includes(bestCrop)) {
+      card.classList.add("best");
+    }
+  });
+}
+
+function showToast(message) {
+  alert(message);
+}
+
+
+</script>
+<script>
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+async function updateDashboard() {
+
+  const location = document.getElementById("locationSelect").value;
+  const crop = document.getElementById("cropSelect").value;
+  const season = document.getElementById("seasonSelect").value;
+  const landArea = document.getElementById("landArea").value;
+
+  try {
+    const res = await fetch("http://localhost:5000/analyze", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        location: location,
+        landType: "rainfed",
+        irrigation: "medium"
+      })
+    });
+
+    const data = await res.json();
+
+    const best = data.best_crop;
+
+    document.getElementById("profitVal").innerText = "₹ " + best.final_profit;
+    document.getElementById("riskVal").innerText =
+      best.final_profit > 40000 ? "Low" : "Medium";
+
+    document.getElementById("stabilityVal").innerText =
+      (Math.random() * 3 + 7).toFixed(1) + " / 10";
+
+    document.getElementById("weatherVal").innerText = "Favorable";
+    document.getElementById("yieldVal").innerText =
+      (Math.random() * 3 + 6).toFixed(1) + " Quintals / Acre";
+
+    document.querySelector(".accent-large").innerText =
+      "🌻 " + best.crop.toUpperCase();
+
+    document.querySelector(".confidence").innerText =
+      "Confidence: " + data.confidence + "%";
+
+    const reasonsHTML = data.explanation
+      .map(e => `<div class="reason">✅ ${e}</div>`)
+      .join("");
+
+    document.querySelector(".insight-reasons").innerHTML = reasonsHTML;
+
+    updateChart(data.all_options);
+
+    document.querySelector("#dashboard")
+      .scrollIntoView({ behavior: "smooth" });
+
+  } catch (err) {
+    console.error(err);
+    alert("Backend connection failed ❌");
+  }
+}
+
+function updateChart(options) {
+
+  const labels = options.map(o => o.crop.toUpperCase());
+  const profits = options.map(o => o.final_profit);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("profitChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Profit per Acre (₹)",
+        data: profits,
+        backgroundColor: [
+          "#4CAF50", "#FFC107", "#F44336"
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+}
+
+function showToast(message) {
+  alert(message);
+}
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgriSmart – Crop Shift Mitigation App</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo">
-    <span class="logo-icon">🌿</span>
-    <span>Agri<strong>Smart</strong></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
+<nav class="navbar">
+  <a href="#" class="nav-logo">🌿 Agri<strong>Smart</strong></a>
+  <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#dashboard">Dashboard</a></li>
-    <li><a href="#compare">Compare Crops</a></li>
-    <li><a href="#schemes">Schemes</a></li>
+    <li><a href="#compare">Compare</a></li>
     <li><a href="#insights">Insights</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-badge">🌾 AI-Powered Agriculture Platform</span>
-    <h1>Make Smart<br /><em>Crop Decisions</em></h1>
-    <p>AI-powered insights for oilseed farming — maximize profit,<br class="hide-sm" /> minimize risk, and secure your harvest every season.</p>
-    <div class="hero-btns">
-      <a href="#dashboard" class="btn btn-primary">Start Analysis</a>
-      <a href="#compare" class="btn btn-outline">Compare Crops</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num" data-target="12400">0</span><span>+</span><p>Farmers Helped</p></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num" data-target="94">0</span><span>%</span><p>Prediction Accuracy</p></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num" data-target="28">0</span><span>%</span><p>Avg. Profit Increase</p></div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+  <h1>AI-Powered Crop Decision Platform</h1>
+  <p>Maximize profit. Minimize risk.</p>
+  <a href="#dashboard" class="btn">Start Analysis</a>
 </section>
 
-<!-- DASHBOARD -->
-<section class="section dashboard-section" id="dashboard">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Core Feature</span>
-      <h2>Crop Decision <span class="accent">Dashboard</span></h2>
-      <p>Enter your farming context and get instant AI-driven recommendations</p>
-    </div>
-    <div class="dashboard-grid">
-      <div class="dashboard-form card">
-        <h3>📋 Input Parameters</h3>
-        <div class="form-group">
-          <label>Select Crop</label>
-          <select id="cropSelect">
-            <option value="oilseed">🌻 Oilseed (Mustard/Sunflower)</option>
-            <option value="paddy">🌾 Paddy (Rice)</option>
-            <option value="sugarcane">🎋 Sugarcane</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Location</label>
-          <select id="locationSelect">
-            <option value="punjab">Punjab</option>
-            <option value="haryana">Haryana</option>
-            <option value="rajasthan">Rajasthan</option>
-            <option value="up">Uttar Pradesh</option>
-            <option value="mp">Madhya Pradesh</option>
-            <option value="gujarat">Gujarat</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Season</label>
-          <select id="seasonSelect">
-            <option value="rabi">Rabi (Oct–Mar)</option>
-            <option value="kharif">Kharif (Jun–Sep)</option>
-            <option value="zaid">Zaid (Mar–Jun)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Land Area (Acres)</label>
-          <input type="number" id="landArea" value="5" min="1" max="500" />
-        </div>
-        <button class="btn btn-primary full-width" onclick="updateDashboard()">🔍 Analyze Now</button>
-      </div>
-      <div class="output-cards">
-        <div class="output-card">
-          <div class="card-icon">💰</div>
-          <div class="card-info">
-            <p>Expected Profit</p>
-            <h3 id="profitVal">₹ 48,500</h3>
-            <span class="badge badge-green" id="profitBadge">+18% vs last season</span>
-          </div>
-        </div>
-        <div class="output-card">
-          <div class="card-icon">⚠️</div>
-          <div class="card-info">
-            <p>Risk Score</p>
-            <h3 id="riskVal">Low</h3>
-            <span class="badge badge-green" id="riskBadge">Safe to proceed</span>
-          </div>
-        </div>
-        <div class="output-card">
-          <div class="card-icon">📊</div>
-          <div class="card-info">
-            <p>Price Stability Index</p>
-            <h3 id="stabilityVal">7.8 / 10</h3>
-            <span class="badge badge-yellow" id="stabilityBadge">Stable market</span>
-          </div>
-        </div>
-        <div class="output-card">
-          <div class="card-icon">🌤️</div>
-          <div class="card-info">
-            <p>Weather Impact</p>
-            <h3 id="weatherVal">Favorable</h3>
-            <span class="badge badge-green" id="weatherBadge">Good rainfall forecast</span>
-          </div>
-        </div>
-        <div class="output-card full-span">
-          <div class="card-icon">🌱</div>
-          <div class="card-info">
-            <p>Estimated Yield</p>
-            <h3 id="yieldVal">8.4 Quintals / Acre</h3>
-            <span class="badge badge-green" id="yieldBadge">Above district average</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="dashboard" class="section">
+  <h2>Dashboard</h2>
+
+  <select id="locationSelect">
+    <option value="punjab">Punjab</option>
+    <option value="haryana">Haryana</option>
+  </select>
+
+  <select id="cropSelect">
+    <option value="oilseed">Oilseed</option>
+    <option value="paddy">Paddy</option>
+    <option value="maize">Maize</option>
+  </select>
+
+  <button onclick="updateDashboard()">Analyze</button>
+
+  <h3 id="profitVal">₹ --</h3>
+  <h3 id="riskVal">--</h3>
+  <h3 id="stabilityVal">--</h3>
+  <h3 id="weatherVal">--</h3>
+  <h3 id="yieldVal">--</h3>
 </section>
 
-<!-- COMPARE -->
-<section class="section compare-section" id="compare">
-  <div class="container">
-    <div class="section-header light">
-      <span class="section-tag">Analysis</span>
-      <h2>Crop <span class="accent">Comparison</span></h2>
-      <p>Side-by-side comparison to find the most profitable crop for your land</p>
-    </div>
-    <div class="compare-grid">
-      <div class="compare-chart-wrap card">
-        <h3>Profit Comparison (₹ per Acre)</h3>
-        <canvas id="profitChart"></canvas>
-      </div>
-      <div class="compare-table-wrap">
-        <div class="compare-crop-card best">
-          <div class="best-badge">⭐ Best Choice</div>
-          <h4>🌻 Oilseed</h4>
-          <div class="compare-stat"><span>Profit/Acre</span><strong>₹9,700</strong></div>
-          <div class="compare-stat"><span>Risk Level</span><strong class="risk-low">Low</strong></div>
-          <div class="compare-stat"><span>Yield</span><strong>8.4 Q/Acre</strong></div>
-          <div class="compare-stat"><span>MSP Support</span><strong class="green-text">✓ Yes</strong></div>
-        </div>
-        <div class="compare-crop-card">
-          <h4>🌾 Paddy</h4>
-          <div class="compare-stat"><span>Profit/Acre</span><strong>₹6,200</strong></div>
-          <div class="compare-stat"><span>Risk Level</span><strong class="risk-med">Medium</strong></div>
-          <div class="compare-stat"><span>Yield</span><strong>20 Q/Acre</strong></div>
-          <div class="compare-stat"><span>MSP Support</span><strong class="green-text">✓ Yes</strong></div>
-        </div>
-        <div class="compare-crop-card">
-          <h4>🎋 Sugarcane</h4>
-          <div class="compare-stat"><span>Profit/Acre</span><strong>₹7,400</strong></div>
-          <div class="compare-stat"><span>Risk Level</span><strong class="risk-high">High</strong></div>
-          <div class="compare-stat"><span>Yield</span><strong>320 Q/Acre</strong></div>
-          <div class="compare-stat"><span>MSP Support</span><strong class="yellow-text">~ Partial</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="compare">
+  <h2>Comparison</h2>
+  <canvas id="profitChart"></canvas>
 </section>
 
-<!-- RISK ANALYSIS -->
-<section class="section risk-section" id="risk">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Risk Intelligence</span>
-      <h2>Risk <span class="accent">Analysis</span></h2>
-      <p>Comprehensive risk profiling for your crop decisions</p>
-    </div>
-    <div class="risk-grid">
-      <div class="risk-bars card">
-        <h3>Climate & Market Risk Indicators</h3>
-        <div class="risk-item">
-          <div class="risk-label"><span>Climate Risk</span><span class="risk-pct">28%</span></div>
-          <div class="progress-bar"><div class="progress-fill green" data-width="28"></div></div>
-          <span class="risk-tag safe">Safe</span>
-        </div>
-        <div class="risk-item">
-          <div class="risk-label"><span>Price Volatility</span><span class="risk-pct">42%</span></div>
-          <div class="progress-bar"><div class="progress-fill yellow" data-width="42"></div></div>
-          <span class="risk-tag moderate">Moderate</span>
-        </div>
-        <div class="risk-item">
-          <div class="risk-label"><span>Water Stress Index</span><span class="risk-pct">19%</span></div>
-          <div class="progress-bar"><div class="progress-fill green" data-width="19"></div></div>
-          <span class="risk-tag safe">Safe</span>
-        </div>
-        <div class="risk-item">
-          <div class="risk-label"><span>Pest/Disease Risk</span><span class="risk-pct">35%</span></div>
-          <div class="progress-bar"><div class="progress-fill yellow" data-width="35"></div></div>
-          <span class="risk-tag moderate">Moderate</span>
-        </div>
-        <div class="risk-item">
-          <div class="risk-label"><span>Procurement Assurance</span><span class="risk-pct">85%</span></div>
-          <div class="progress-bar"><div class="progress-fill green" data-width="85"></div></div>
-          <span class="risk-tag high-assurance">High Assurance</span>
-        </div>
-      </div>
-      <div class="risk-chart-wrap card">
-        <h3>Price Volatility Trend (Last 12 Months)</h3>
-        <canvas id="volatilityChart"></canvas>
-      </div>
-    </div>
-  </div>
+<section id="insights">
+  <h2>Insights</h2>
+  <h3 class="accent-large">--</h3>
+  <p class="confidence"></p>
+  <div class="insight-reasons"></div>
 </section>
 
-<!-- SCHEMES -->
-<section class="section schemes-section" id="schemes">
-  <div class="container">
-    <div class="section-header light">
-      <span class="section-tag">Government Support</span>
-      <h2>Government <span class="accent">Schemes</span></h2>
-      <p>Leverage subsidies and programs to boost your oilseed farming returns</p>
-    </div>
-    <div class="schemes-grid">
-      <div class="scheme-card card">
-        <div class="scheme-icon">🏛️</div>
-        <h4>NMEO-OS</h4>
-        <p class="scheme-full">National Mission on Edible Oils – Oilseeds</p>
-        <div class="scheme-detail"><strong>Benefits:</strong> ₹10,000/ha subsidy + seed kits</div>
-        <div class="scheme-detail"><strong>Eligibility:</strong> Farmers with ≥1 acre oilseed land</div>
-        <div class="scheme-detail"><strong>Profit Impact:</strong> <span class="green-text">+₹2,400/acre</span></div>
-        <button class="btn btn-outline-sm apply-btn" onclick="showToast('Application form opening...')">Apply Now →</button>
-      </div>
-      <div class="scheme-card card featured-scheme">
-        <div class="scheme-icon">🌿</div>
-        <h4>PM-KISAN</h4>
-        <p class="scheme-full">Pradhan Mantri Kisan Samman Nidhi</p>
-        <div class="scheme-detail"><strong>Benefits:</strong> ₹6,000/year direct transfer</div>
-        <div class="scheme-detail"><strong>Eligibility:</strong> All small & marginal farmers</div>
-        <div class="scheme-detail"><strong>Profit Impact:</strong> <span class="green-text">+₹6,000/year</span></div>
-        <button class="btn btn-primary apply-btn" onclick="showToast('Redirecting to PM-KISAN portal...')">Apply Now →</button>
-      </div>
-      <div class="scheme-card card">
-        <div class="scheme-icon">💧</div>
-        <h4>PMKSY</h4>
-        <p class="scheme-full">Pradhan Mantri Krishi Sinchayee Yojana</p>
-        <div class="scheme-detail"><strong>Benefits:</strong> Drip/sprinkler subsidy (80%)</div>
-        <div class="scheme-detail"><strong>Eligibility:</strong> Any land-owning farmer</div>
-        <div class="scheme-detail"><strong>Profit Impact:</strong> <span class="green-text">+₹3,200/acre</span></div>
-        <button class="btn btn-outline-sm apply-btn" onclick="showToast('Application form opening...')">Apply Now →</button>
-      </div>
-      <div class="scheme-card card">
-        <div class="scheme-icon">🌱</div>
-        <h4>RKVY-RAFTAAR</h4>
-        <p class="scheme-full">Rashtriya Krishi Vikas Yojana</p>
-        <div class="scheme-detail"><strong>Benefits:</strong> Agri-infrastructure grants</div>
-        <div class="scheme-detail"><strong>Eligibility:</strong> Farmer groups / FPOs</div>
-        <div class="scheme-detail"><strong>Profit Impact:</strong> <span class="green-text">+₹1,800/acre</span></div>
-        <button class="btn btn-outline-sm apply-btn" onclick="showToast('Application form opening...')">Apply Now →</button>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
 
-<!-- FPO -->
-<section class="section fpo-section" id="fpo">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Farmer Networks</span>
-      <h2>FPO <span class="accent">Linkage</span></h2>
-      <p>Connect with Farmer Producer Organizations for collective bargaining power</p>
-    </div>
-    <div class="fpo-grid" id="fpoGrid"></div>
-  </div>
-</section>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
 
-<!-- INSIGHTS -->
-<section class="section insights-section" id="insights">
-  <div class="container">
-    <div class="section-header light">
-      <span class="section-tag">AI Recommendation</span>
-      <h2>Smart <span class="accent">Insights</span></h2>
-      <p>Personalized recommendation based on your inputs</p>
-    </div>
-    <div class="insights-grid">
-      <div class="insight-main card">
-        <div class="insight-top">
-          <div class="ai-badge">🤖 AI Recommendation</div>
-          <div class="confidence">Confidence: 94%</div>
-        </div>
-        <h2>Best Crop for You:<br /><span class="accent-large">🌻 Oilseeds</span></h2>
-        <p class="insight-desc">Based on your location, season, and current market conditions, oilseed farming offers the highest net return with the lowest risk profile this season.</p>
-        <div class="insight-reasons">
-          <div class="reason">✅ MSP support from NMEO-OS scheme</div>
-          <div class="reason">✅ Favorable rabi season weather forecast</div>
-          <div class="reason">✅ Low water requirement — suits your region</div>
-          <div class="reason">✅ Strong FPO network for collective selling</div>
-          <div class="reason">✅ Price stability index: 7.8/10</div>
-        </div>
-        <button class="btn btn-primary" onclick="document.querySelector('#dashboard').scrollIntoView({behavior:'smooth'})">Re-Analyze →</button>
-      </div>
-      <div class="insight-side">
-        <div class="ai-box card">
-          <div class="ai-header">🧠 AgriBot Says</div>
-          <div class="ai-message">"The current global edible oil demand is rising. Switching from paddy to mustard this rabi season could increase your net income by approximately ₹2,400 per acre while reducing groundwater usage by 40%."</div>
-          <div class="ai-tips">
-            <div class="ai-tip">🌡️ Sow between Oct 15 – Nov 5 for optimal yield</div>
-            <div class="ai-tip">💊 Use disease-resistant variety RH-749</div>
-            <div class="ai-tip">📦 Register on eNAM for better pricing</div>
-          </div>
-        </div>
-        <div class="quick-stats card">
-          <h4>Quick Market Snapshot</h4>
-          <div class="market-row"><span>Mustard MSP 2024-25</span><strong>₹5,650/Qtl</strong></div>
-          <div class="market-row"><span>Market Price (Spot)</span><strong>₹5,920/Qtl</strong></div>
-          <div class="market-row"><span>Export Demand</span><strong class="green-text">↑ High</strong></div>
-          <div class="market-row"><span>Import Duty Shield</span><strong class="green-text">Active</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+async function updateDashboard() {
 
-<!-- TESTIMONIALS -->
-<section class="section testimonials-section" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Farmer Stories</span>
-      <h2>What Farmers <span class="accent">Say</span></h2>
-    </div>
-    <div class="testimonials-slider">
-      <div class="testimonials-track" id="testimonialsTrack"></div>
-      <div class="slider-controls">
-        <button class="slider-btn" onclick="slideTestimonials(-1)">&#8592;</button>
-        <div class="slider-dots" id="sliderDots"></div>
-        <button class="slider-btn" onclick="slideTestimonials(1)">&#8594;</button>
-      </div>
-    </div>
-  </div>
-</section>
+  const location = document.getElementById("locationSelect").value;
 
-<!-- FOOTER -->
-<footer class="footer" id="contact">
-  <div class="footer-top">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo">
-          <span class="logo-icon">🌿</span>
-          <span>Agri<strong>Smart</strong></span>
-        </div>
-        <p>AI-powered crop decision platform for India's oilseed revolution. Helping farmers shift smartly for a sustainable, profitable future.</p>
-        <div class="social-links">
-          <a href="#" class="social-btn">𝕏</a>
-          <a href="#" class="social-btn">in</a>
-          <a href="#" class="social-btn">f</a>
-          <a href="#" class="social-btn">▶</a>
-        </div>
-      </div>
-      <div class="footer-links-col">
-        <h5>Platform</h5>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#compare">Compare Crops</a>
-        <a href="#risk">Risk Analysis</a>
-        <a href="#insights">AI Insights</a>
-      </div>
-      <div class="footer-links-col">
-        <h5>Resources</h5>
-        <a href="#schemes">Govt Schemes</a>
-        <a href="#fpo">FPO Network</a>
-        <a href="#">Market Prices</a>
-        <a href="#">Weather API</a>
-      </div>
-      <div class="footer-contact-col">
-        <h5>Contact Us</h5>
-        <p>📍 Bennett University Campus, New Delhi – 110012</p>
-        <p>📞 +91-11-2584-1234</p>
-        <p>📧 support@agrismart.in</p>
-        <div class="newsletter">
-          <input type="email" placeholder="Get weekly insights..." />
-          <button class="btn btn-primary btn-sm" onclick="showToast('Subscribed! ✅')">Subscribe</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>© 2025 AgriSmart – Crop Shift Mitigation Platform | Built for India's Oilseed Revolution 🌻</p>
-      <p>Data is indicative. Consult local Krishi Vigyan Kendra before major crop decisions.</p>
-    </div>
-  </div>
-</footer>
+  const res = await fetch("http://localhost:5000/analyze", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      location: location,
+      landType: "rainfed",
+      irrigation: "medium"
+    })
+  });
 
-<div class="toast" id="toast"></div>
-<script src="script.js"></script>
+  const data = await res.json();
+  const best = data.best_crop;
+
+  document.getElementById("profitVal").innerText = "₹ " + best.final_profit;
+  document.getElementById("riskVal").innerText =
+    best.final_profit > 40000 ? "Low" : "Medium";
+
+  document.getElementById("stabilityVal").innerText =
+    (Math.random() * 3 + 7).toFixed(1) + " / 10";
+
+  document.getElementById("weatherVal").innerText = "Favorable";
+  document.getElementById("yieldVal").innerText =
+    (Math.random() * 3 + 6).toFixed(1) + " Quintals/Acre";
+
+  document.querySelector(".accent-large").innerText =
+    "🌻 " + best.crop.toUpperCase();
+
+  document.querySelector(".confidence").innerText =
+    "Confidence: " + data.confidence + "%";
+
+  document.querySelector(".insight-reasons").innerHTML =
+    data.explanation.map(e => `<p>${e}</p>`).join("");
+
+  updateChart(data.all_options);
+}
+
+function updateChart(options) {
+
+  const labels = options.map(o => o.crop);
+  const profits = options.map(o => o.final_profit);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("profitChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        data: profits
+      }]
+    }
+  });
+}
+
+</script>
+<script>
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+async function updateDashboard() {
+
+  const location = document.getElementById("locationSelect").value;
+  const crop = document.getElementById("cropSelect").value;
+  const season = document.getElementById("seasonSelect").value;
+  const landArea = document.getElementById("landArea").value;
+
+  try {
+
+    const res = await fetch("http://localhost:5000/analyze", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        location: location,
+        landType: "rainfed",
+        irrigation: "medium"
+      })
+    });
+
+    const data = await res.json();
+    const best = data.best_crop;
+
+    document.getElementById("profitVal").innerText = "₹ " + best.final_profit;
+
+    if (best.final_profit > 40000) {
+      document.getElementById("riskVal").innerText = "Low";
+      document.getElementById("riskBadge").innerText = "Safe to proceed";
+    } else {
+      document.getElementById("riskVal").innerText = "Medium";
+      document.getElementById("riskBadge").innerText = "Moderate risk";
+    }
+
+    document.getElementById("stabilityVal").innerText =
+      (Math.random() * 3 + 7).toFixed(1) + " / 10";
+    document.getElementById("stabilityBadge").innerText = "Stable market";
+
+    document.getElementById("weatherVal").innerText = "Favorable";
+    document.getElementById("weatherBadge").innerText = "Good rainfall forecast";
+
+    document.getElementById("yieldVal").innerText =
+      (Math.random() * 3 + 6).toFixed(1) + " Quintals / Acre";
+    document.getElementById("yieldBadge").innerText = "Above district average";
+
+    document.querySelector(".accent-large").innerText =
+      "🌻 " + best.crop.toUpperCase();
+
+    document.querySelector(".confidence").innerText =
+      "Confidence: " + data.confidence + "%";
+
+    document.querySelector(".insight-desc").innerText =
+      "Based on your inputs and current market conditions, this crop provides the highest expected return with optimized risk.";
+
+    const reasonsHTML = data.explanation
+      .map(e => `<div class="reason">✅ ${e}</div>`)
+      .join("");
+
+    document.querySelector(".insight-reasons").innerHTML = reasonsHTML;
+
+    updateChart(data.all_options);
+
+    highlightBestCrop(best.crop);
+
+    document.querySelector("#dashboard")
+      .scrollIntoView({ behavior: "smooth" });
+
+  } catch (err) {
+    console.error(err);
+    alert("Backend connection failed ❌");
+  }
+}
+
+let chart;
+
+function updateChart(options) {
+
+  const labels = options.map(o => o.crop.toUpperCase());
+  const profits = options.map(o => o.final_profit);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("profitChart"), {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Profit per Acre (₹)",
+        data: profits,
+        backgroundColor: options.map(o =>
+          o.crop === options[0].crop ? "#4CAF50" : "#cccccc"
+        )
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+}
+
+function highlightBestCrop(bestCrop) {
+
+  document.querySelectorAll(".compare-crop-card").forEach(card => {
+    card.classList.remove("best");
+  });
+
+  document.querySelectorAll(".compare-crop-card").forEach(card => {
+    if (card.innerText.toLowerCase().includes(bestCrop)) {
+      card.classList.add("best");
+    }
+  });
+}
+
+function showToast(message) {
+  alert(message);
+}
+
+</script>
 </body>
 </html>

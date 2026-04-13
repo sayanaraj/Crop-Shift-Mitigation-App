@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriSmart — Create Account</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="signup">
+
+  <div class="auth-page">
+
+    <!-- ─── LEFT PANEL ─── -->
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <div class="auth-logo">
+          <div class="logo-icon">🌿</div>
+          AgriSmart
+        </div>
+        <h2 class="auth-tagline">
+          Join India's<br>
+          <span class="hl">Oilseed</span><br>
+          Revolution
+        </h2>
+        <p class="auth-desc">
+          Thousands of farmers are already using AgriSmart to shift to high-profit oilseed crops.
+          Start your journey today — completely free.
+        </p>
+        <div class="auth-features">
+          <div class="af-item">
+            <div class="af-icon">📊</div>
+            <span>Crop decision dashboard with live data</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">⚖️</div>
+            <span>Side-by-side crop comparison engine</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">🏛️</div>
+            <span>Government schemes & subsidy tracker</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">🤖</div>
+            <span>AI-powered crop shift recommendations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── RIGHT FORM ─── -->
+    <div class="auth-right">
+      <div class="auth-form-wrap">
+
+        <button class="auth-back" onclick="window.location.href='index.html'">
+          ← Back to Home
+        </button>
+
+        <div class="auth-form-header">
+          <h2>Create Account</h2>
+          <p>Start making smarter crop decisions today.</p>
+        </div>
+
+        <!-- Global message -->
+        <div class="global-error" id="signup-global"></div>
+
+        <form id="signup-form" novalidate>
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Rajesh Kumar" autocomplete="name" />
+            <div class="error-msg" id="err-name"></div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" />
+            <div class="error-msg" id="err-email"></div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="signup-pass">Password</label>
+            <input type="password" id="signup-pass" placeholder="Create a strong password" autocomplete="new-password" />
+            <div class="password-strength">
+              <div class="ps-bar"><div class="ps-fill" id="ps-fill"></div></div>
+              <div class="ps-label" id="ps-label"></div>
+            </div>
+            <div class="error-msg" id="err-pass"></div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="signup-confirm">Confirm Password</label>
+            <input type="password" id="signup-confirm" placeholder="Repeat your password" autocomplete="new-password" />
+            <div class="error-msg" id="err-confirm"></div>
+          </div>
+
+          <button type="submit" class="btn-auth">🌱 Create Account</button>
+        </form>
+
+        <div class="auth-switch">
+          Already have an account? <a href="login.html">Login here</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

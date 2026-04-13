@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriSmart — Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login">
+
+  <div class="auth-page">
+
+    <!-- ─── LEFT PANEL ─── -->
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <div class="auth-logo">
+          <div class="logo-icon">🌿</div>
+          AgriSmart
+        </div>
+        <h2 class="auth-tagline">
+          Welcome<br>
+          <span class="hl">Back</span>,<br>
+          Farmer
+        </h2>
+        <p class="auth-desc">
+          Your fields are waiting. Log back in to check today's recommendations,
+          weather updates, and crop comparison insights.
+        </p>
+        <div class="auth-features">
+          <div class="af-item">
+            <div class="af-icon">🌦️</div>
+            <span>Today's hyperlocal weather update</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">🛡️</div>
+            <span>Risk level analysis for your region</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">📈</div>
+            <span>Latest MSP & market price updates</span>
+          </div>
+          <div class="af-item">
+            <div class="af-icon">🌻</div>
+            <span>Best oilseed picks for this season</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── RIGHT FORM ─── -->
+    <div class="auth-right">
+      <div class="auth-form-wrap">
+
+        <button class="auth-back" onclick="window.location.href='index.html'">
+          ← Back to Home
+        </button>
+
+        <div class="auth-form-header">
+          <h2>Welcome Back</h2>
+          <p>Log in to your AgriSmart account.</p>
+        </div>
+
+        <!-- Global error -->
+        <div class="global-error" id="login-global"></div>
+
+        <form id="login-form" novalidate>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" />
+            <div class="error-msg" id="err-login-email"></div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="login-pass">Password</label>
+            <input type="password" id="login-pass" placeholder="Your password" autocomplete="current-password" />
+            <div class="error-msg" id="err-login-pass"></div>
+          </div>
+
+          <button type="submit" class="btn-auth">🔐 Login to Dashboard</button>
+        </form>
+
+        <div class="auth-switch" style="margin-top:16px;">
+          Don't have an account? <a href="signup.html">Create one free</a>
+        </div>
+
+        <!-- Demo hint -->
+        <div style="margin-top:28px; padding:14px; background:#f8fdf9; border:1px solid #c8e6d4; border-radius:10px; font-size:0.82rem; color:#2d6a4f; line-height:1.6;">
+          <strong>💡 Demo:</strong> Sign up first to create an account, then log in with those credentials.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+  

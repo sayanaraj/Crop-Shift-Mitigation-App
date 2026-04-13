@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriSmart — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="dashboard">
+
+<div class="dashboard-layout">
+
+  <!-- ─── SIDEBAR ─── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🌿</div>
+      AgriSmart
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <button class="nav-item active">
+        <span class="nav-icon">🏡</span> Overview
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">📊</span> Crop Dashboard
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">⚖️</span> Crop Comparison
+      </button>
+
+      <div class="nav-section-label">Analysis</div>
+      <button class="nav-item">
+        <span class="nav-icon">🛡️</span> Risk Analysis
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">🌦️</span> Weather
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">📈</span> Market Prices
+      </button>
+
+      <div class="nav-section-label">Support</div>
+      <button class="nav-item">
+        <span class="nav-icon">🏛️</span> Gov. Schemes
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">🤖</span> AI Advisor
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">⚙️</span> Settings
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar" id="dash-avatar">R</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebar-user-name">Loading…</div>
+          <div class="user-role">Oilseed Farmer</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="AgriSmart.logout()">
+        🚪 Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ─── MAIN ─── -->
+  <main class="main-content">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="menu-btn" id="sidebar-toggle">☰</button>
+        <h1>Farm Overview</h1>
+      </div>
+      <div class="top-bar-right">
+        <div class="date-badge" id="top-date">Loading date…</div>
+        <div class="notif-btn">
+          🔔
+          <div class="notif-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-body">
+
+      <!-- Welcome Banner -->
+      <div class="welcome-banner">
+        <div class="welcome-text">
+          <h2>Good Morning, <span id="dash-user-name">Farmer</span>! 👋</h2>
+          <p>Here's your crop advisory summary for today. The AI recommends checking mustard prices.</p>
+        </div>
+        <div class="welcome-emoji">🌻</div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon ki-green">💰</div>
+          <div class="kpi-data">
+            <div class="kpi-label">Projected Profit</div>
+            <div class="kpi-value">₹48K</div>
+            <div class="kpi-change up">↑ 34% vs last season</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon ki-wheat">🌾</div>
+          <div class="kpi-data">
+            <div class="kpi-label">Est. Yield</div>
+            <div class="kpi-value">22 q/ha</div>
+            <div class="kpi-change up">↑ 18% improvement</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon ki-rust">⚡</div>
+          <div class="kpi-data">
+            <div class="kpi-label">Risk Score</div>
+            <div class="kpi-value">Low</div>
+            <div class="kpi-change up">✓ Favourable season</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon ki-blue">🌡️</div>
+          <div class="kpi-data">
+            <div class="kpi-label">Temperature</div>
+            <div class="kpi-value">28°C</div>
+            <div class="kpi-change down">↓ 3° below optimal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+
+        <!-- Bar Chart: Profit Comparison -->
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>📊 Seasonal Profit Comparison (₹/ha)</h3>
+            <div class="chart-legend">
+              <div class="legend-item"><div class="legend-dot" style="background:var(--leaf)"></div> Oilseed</div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--wheat)"></div> Conventional</div>
+            </div>
+          </div>
+          <div class="bar-chart">
+            <!-- Kharif -->
+            <div class="bar-group">
+              <div class="bar-pair">
+                <div class="bar oilseed" style="height:140px" title="Oilseed: ₹42K"></div>
+                <div class="bar other"   style="height:80px"  title="Conv.: ₹22K"></div>
+              </div>
+              <div class="bar-label">Kharif</div>
+            </div>
+            <!-- Rabi -->
+            <div class="bar-group">
+              <div class="bar-pair">
+                <div class="bar oilseed" style="height:160px" title="Oilseed: ₹48K"></div>
+                <div class="bar other"   style="height:95px"  title="Conv.: ₹28K"></div>
+              </div>
+              <div class="bar-label">Rabi</div>
+            </div>
+            <!-- Zaid -->
+            <div class="bar-group">
+              <div class="bar-pair">
+                <div class="bar oilseed" style="height:110px" title="Oilseed: ₹32K"></div>
+                <div class="bar other"   style="height:70px"  title="Conv.: ₹20K"></div>
+              </div>
+              <div class="bar-label">Zaid</div>
+            </div>
+            <!-- YoY -->
+            <div class="bar-group">
+              <div class="bar-pair">
+                <div class="bar oilseed" style="height:180px" title="Oilseed: ₹52K"></div>
+                <div class="bar other"   style="height:100px" title="Conv.: ₹29K"></div>
+              </div>
+              <div class="bar-label">Annual</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donut: Crop Area Distribution -->
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>🗺️ Land Use Distribution</h3>
+          </div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#f0f0f0" stroke-width="5"/>
+              <!-- Sunflower 35% → offset=0 -->
+              <circle cx="21" cy="21" r="15.9" fill="none"
+                stroke="#52b788" stroke-width="5"
+                stroke-dasharray="35 65" stroke-dashoffset="25"
+                style="transition:stroke-dasharray 1s"/>
+              <!-- Mustard 28% -->
+              <circle cx="21" cy="21" r="15.9" fill="none"
+                stroke="#e9c46a" stroke-width="5"
+                stroke-dasharray="28 72" stroke-dashoffset="-10"/>
+              <!-- Soybean 22% -->
+              <circle cx="21" cy="21" r="15.9" fill="none"
+                stroke="#c87941" stroke-width="5"
+                stroke-dasharray="22 78" stroke-dashoffset="-38"/>
+              <!-- Wheat 15% -->
+              <circle cx="21" cy="21" r="15.9" fill="none"
+                stroke="#95d5b2" stroke-width="5"
+                stroke-dasharray="15 85" stroke-dashoffset="-60"/>
+              <text x="21" y="24" text-anchor="middle" font-size="6" font-weight="700" fill="#1a3c2b">85%</text>
+              <text x="21" y="28.5" text-anchor="middle" font-size="3.5" fill="#8a8a8a">Oilseed</text>
+            </svg>
+            <div class="donut-legend">
+              <div class="dl-item"><div class="dl-color" style="background:#52b788"></div>Sunflower<span class="dl-pct">35%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:#e9c46a"></div>Mustard<span class="dl-pct">28%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:#c87941"></div>Soybean<span class="dl-pct">22%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:#95d5b2"></div>Wheat<span class="dl-pct">15%</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /charts-row -->
+
+      <!-- AI Recommendation -->
+      <div class="ai-card">
+        <div class="ai-content">
+          <div class="ai-icon">🤖</div>
+          <div class="ai-text">
+            <h3>AI Crop Advisor — This Season's Recommendation</h3>
+            <p>Based on your district's soil type (loamy-clay), current Rabi season, and MSP trends, our AI recommends shifting 60% of your land to mustard and sunflower. Expected income boost: <strong style="color:var(--mint)">₹26,000/ha</strong> compared to wheat alone.</p>
+            <div class="ai-crops">
+              <div class="ai-crop-tag">🌻 Sunflower</div>
+              <div class="ai-crop-tag">🟡 Mustard</div>
+              <div class="ai-crop-tag">🫘 Soybean</div>
+              <div class="ai-crop-tag">🌿 Linseed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crop Comparison Table -->
+      <div class="comparison-card">
+        <div class="chart-card-header">
+          <h3 class="section-heading">⚖️ Detailed Crop Comparison</h3>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="crop-table">
+            <thead>
+              <tr>
+                <th>Crop</th>
+                <th>Type</th>
+                <th>Yield (q/ha)</th>
+                <th>MSP (₹/q)</th>
+                <th>Net Profit/ha</th>
+                <th>Water Need</th>
+                <th>Risk</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🌻</span>
+                    <div><div class="crop-name">Sunflower</div><div class="crop-type">Kharif / Rabi</div></div>
+                  </div>
+                </td>
+                <td>Oilseed</td>
+                <td>18–22</td>
+                <td>₹6,760</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:90%"></div></div>
+                    <span style="font-weight:700;color:var(--emerald);font-size:0.85rem;">₹42K</span>
+                  </div>
+                </td>
+                <td>Low</td>
+                <td><span class="badge badge-low">Low</span></td>
+                <td><span class="badge badge-rec">✓ Recommended</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🟡</span>
+                    <div><div class="crop-name">Mustard</div><div class="crop-type">Rabi</div></div>
+                  </div>
+                </td>
+                <td>Oilseed</td>
+                <td>14–18</td>
+                <td>₹5,650</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:82%"></div></div>
+                    <span style="font-weight:700;color:var(--emerald);font-size:0.85rem;">₹36K</span>
+                  </div>
+                </td>
+                <td>Very Low</td>
+                <td><span class="badge badge-low">Low</span></td>
+                <td><span class="badge badge-rec">✓ Recommended</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🫘</span>
+                    <div><div class="crop-name">Soybean</div><div class="crop-type">Kharif</div></div>
+                  </div>
+                </td>
+                <td>Oilseed</td>
+                <td>20–26</td>
+                <td>₹4,892</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:78%"></div></div>
+                    <span style="font-weight:700;color:var(--emerald);font-size:0.85rem;">₹38K</span>
+                  </div>
+                </td>
+                <td>Medium</td>
+                <td><span class="badge badge-med">Medium</span></td>
+                <td><span class="badge badge-rec">✓ Recommended</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🌴</span>
+                    <div><div class="crop-name">Oil Palm</div><div class="crop-type">Perennial</div></div>
+                  </div>
+                </td>
+                <td>Oilseed</td>
+                <td>High</td>
+                <td>₹10,640</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:96%"></div></div>
+                    <span style="font-weight:700;color:var(--emerald);font-size:0.85rem;">₹55K</span>
+                  </div>
+                </td>
+                <td>High</td>
+                <td><span class="badge badge-high">High</span></td>
+                <td><span class="badge badge-rec">✓ Recommended</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🌾</span>
+                    <div><div class="crop-name">Wheat</div><div class="crop-type">Rabi</div></div>
+                  </div>
+                </td>
+                <td>Cereal</td>
+                <td>32–40</td>
+                <td>₹2,275</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:38%;background:linear-gradient(90deg,#f4a261,#c87941)"></div></div>
+                    <span style="font-weight:700;color:#c87941;font-size:0.85rem;">₹18K</span>
+                  </div>
+                </td>
+                <td>Medium</td>
+                <td><span class="badge badge-med">Medium</span></td>
+                <td><span class="badge badge-high" style="background:rgba(200,121,65,0.1);color:var(--rust)">Conventional</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="crop-name-cell">
+                    <span class="crop-emoji">🌽</span>
+                    <div><div class="crop-name">Paddy</div><div class="crop-type">Kharif</div></div>
+                  </div>
+                </td>
+                <td>Cereal</td>
+                <td>30–38</td>
+                <td>₹2,183</td>
+                <td>
+                  <div class="profit-bar-wrap">
+                    <div class="profit-bar-bg"><div class="profit-bar-fill" style="width:30%;background:linear-gradient(90deg,#f4a261,#c87941)"></div></div>
+                    <span style="font-weight:700;color:#c87941;font-size:0.85rem;">₹14K</span>
+                  </div>
+                </td>
+                <td>Very High</td>
+                <td><span class="badge badge-high">High</span></td>
+                <td><span class="badge badge-high" style="background:rgba(200,121,65,0.1);color:var(--rust)">Conventional</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Risk + Weather Row -->
+      <div class="bottom-row">
+
+        <!-- Risk Analysis -->
+        <div class="risk-card">
+          <h3 class="section-heading">🛡️ Risk Analysis</h3>
+          <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:4px;">Risk levels for oilseed cultivation in your region</p>
+          <div class="risk-items">
+            <div class="risk-item risk-low">
+              <div class="risk-row">
+                <span class="risk-name">🌧️ Drought Risk</span>
+                <span class="risk-pct">18%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:18%"></div></div>
+            </div>
+            <div class="risk-item risk-low">
+              <div class="risk-row">
+                <span class="risk-name">🐛 Pest & Disease</span>
+                <span class="risk-pct">24%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:24%"></div></div>
+            </div>
+            <div class="risk-item risk-med">
+              <div class="risk-row">
+                <span class="risk-name">📉 Market Volatility</span>
+                <span class="risk-pct">42%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:42%"></div></div>
+            </div>
+            <div class="risk-item risk-low">
+              <div class="risk-row">
+                <span class="risk-name">🌊 Flood Risk</span>
+                <span class="risk-pct">12%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:12%"></div></div>
+            </div>
+            <div class="risk-item risk-med">
+              <div class="risk-row">
+                <span class="risk-name">🌡️ Heat Stress</span>
+                <span class="risk-pct">35%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:35%"></div></div>
+            </div>
+            <div class="risk-item risk-high">
+              <div class="risk-row">
+                <span class="risk-name">💸 Input Cost Rise</span>
+                <span class="risk-pct">68%</span>
+              </div>
+              <div class="risk-track"><div class="risk-fill" style="width:68%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card">
+          <h3 class="section-heading">🌦️ Weather Update</h3>
+          <div style="font-size:0.82rem;color:var(--text-light);margin-bottom:16px;">Farm location · Delhi NCR</div>
+          <div class="weather-main">
+            <div>
+              <div class="weather-temp">28°C</div>
+              <div class="weather-condition">Partly Cloudy</div>
+              <div class="weather-location">Good for field operations</div>
+            </div>
+            <div class="weather-icon">⛅</div>
+          </div>
+          <div class="weather-grid">
+            <div class="wg-item">
+              <div class="wg-label">💧 Humidity</div>
+              <div class="wg-val">62%</div>
+            </div>
+            <div class="wg-item">
+              <div class="wg-label">💨 Wind</div>
+              <div class="wg-val">12 km/h</div>
+            </div>
+            <div class="wg-item">
+              <div class="wg-label">🌧️ Rain (7d)</div>
+              <div class="wg-val">8mm</div>
+            </div>
+            <div class="wg-item">
+              <div class="wg-label">☀️ UV Index</div>
+              <div class="wg-val">6 (High)</div>
+            </div>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:rgba(82,183,136,0.08);border-radius:8px;font-size:0.82rem;color:var(--emerald);border:1px solid rgba(82,183,136,0.2);">
+            ✅ <strong>Advisory:</strong> Ideal conditions for mustard & sunflower sowing this week.
+          </div>
+        </div>
+
+      </div><!-- /bottom-row -->
+
+      <!-- Government Schemes -->
+      <div class="scheme-card">
+        <h3 class="section-heading">🏛️ Active Government Schemes</h3>
+        <p style="font-size:0.82rem;color:var(--text-light);margin-bottom:4px;">Subsidies & support programs available for oilseed farmers</p>
+        <div class="schemes-list">
+          <div class="scheme-item">
+            <div class="scheme-icon">🌱</div>
+            <div class="scheme-info">
+              <div class="scheme-name">PM-KISAN Samman Nidhi</div>
+              <div class="scheme-desc">Direct income support of ₹6,000/year in three equal installments to all landholding farmer families.</div>
+              <div class="scheme-tag">✓ You may be eligible · Apply at pmkisan.gov.in</div>
+            </div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-icon">🫘</div>
+            <div class="scheme-info">
+              <div class="scheme-name">NFSM — Oilseeds Programme</div>
+              <div class="scheme-desc">National Food Security Mission provides seed kits, demonstrations, and training for oilseed crop expansion.</div>
+              <div class="scheme-tag">✓ Seed subsidy up to 50% · Contact district agriculture office</div>
+            </div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-icon">🌴</div>
+            <div class="scheme-info">
+              <div class="scheme-name">National Mission on Edible Oils – Oil Palm</div>
+              <div class="scheme-desc">₹29,000/ha viability gap payment + planting material subsidy for oil palm cultivation under NMEO-OP.</div>
+              <div class="scheme-tag">✓ High subsidy · Suitable for Andhra, Telangana, Northeast</div>
+            </div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-icon">🌻</div>
+            <div class="scheme-info">
+              <div class="scheme-name">State Oilseed Mission</div>
+              <div class="scheme-desc">State-level subsidies on certified seeds, micro-irrigation, and farm machinery for sunflower & groundnut cultivation.</div>
+              <div class="scheme-tag">✓ Varies by state · Check state agriculture portal</div>
+            </div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-icon">🛡️</div>
+            <div class="scheme-info">
+              <div class="scheme-name">Pradhan Mantri Fasal Bima Yojana (PMFBY)</div>
+              <div class="scheme-desc">Crop insurance at just 1.5% (Rabi) and 2% (Kharif) premium. Covers losses from natural calamities, pests, and disease.</div>
+              <div class="scheme-tag">✓ Enroll by season deadline · pmfby.gov.in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /dashboard-body -->
+  </main>
+
+</div><!-- /dashboard-layout -->
+
+<!-- Mobile sidebar toggle button -->
+<button class="sidebar-toggle" id="sidebar-toggle" style="display:none;">☰</button>
+
+<script src="script.js"></script>
+</body>
+</html>
